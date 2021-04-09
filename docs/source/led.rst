@@ -9,8 +9,13 @@ Led
 
 	Set LED color
 	
-	Supported on: |technic_hub| |city|
+	Supported on: |technic_hub| |city_hub| |remote|
 	
 	:param color: color index
 	
 	:type color: integer
+	
+Example	
+-------
+
+.. literalinclude:: ../../examples/CityHub/city_hub.py

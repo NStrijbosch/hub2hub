@@ -764,7 +764,7 @@ class PUPhub:
     
     The methods included in this class are identical for each PoweredUP hub
     
-    Replace ``PUhub`` with
+    Replace ``PUPhub`` with
     
     * ``TechnicHub`` for |technic_hub|
     * ``CityHub`` for |city_hub|
