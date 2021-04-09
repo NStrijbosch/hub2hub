@@ -1,3 +1,5 @@
+.. include:: hubs_image.rst
+
 ######
 Motors
 ######
