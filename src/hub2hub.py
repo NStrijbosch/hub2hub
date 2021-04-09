@@ -628,11 +628,8 @@ class Motor:
 
         :param mode: new mode
         :type mode: byte
-        
-        Example	
-        -------
 
-        .. literalinclude:: ../../examples/CityHub/city_hub.py
+        .. literalinclude:: ../../examples/Motor/Motor_absolute_position.py
         """
         self.__device.mode(mode)
     
@@ -641,6 +638,8 @@ class Motor:
 
         :returns: measurement
         :rtype: tuple
+        
+        .. literalinclude:: ../../examples/Motor/Motor_absolute_position.py
         """
         return self.__device.get()
 
@@ -649,6 +648,8 @@ class Motor:
 
         :param power: in range [-100,..., 100]
         :type power: int
+        
+        .. literalinclude:: ../../examples/Motor/Motor_pwm.py
         """
         set_power = self.__hub.__create_message([0x06, 0x00, 0x81, self.__port, 0x11, 0x51, 0x00, power])
         self.__hub.__handler.write(set_power)
@@ -667,6 +668,8 @@ class Motor:
         
         :param deceleration: the duration time for a deceleration from 0 to 100%. i.e. a time set to 1000 ms. should give an deceleration time of 300 ms from 70% to 40%
         :type deceleration: int
+        
+        .. literalinclude:: ../../examples/Motor/Motor_pwm.py
         """
         set_speed = self.__hub.__create_message([0x09, 0x00, 0x81, self.__port, 0x11, 0x07, speed, max_power, 0x00])
         self.__hub.__handler.write(set_speed)
