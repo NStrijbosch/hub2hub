@@ -84,7 +84,7 @@ WeDo Distance Sensor |WeDo_distance|
 Examples
 --------   
 
-Measure distance
+Measure count
 ^^^^^^^^^^^^^^^^^^^^^
 .. literalinclude:: ../../examples/Sensors/WeDo_distance_count.py
    
@@ -95,4 +95,8 @@ WeDo Tilt Sensor  |WeDo_tilt|
    :file: tables/WeDo_gyro.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
+   
+Measure count
+^^^^^^^^^^^^^^^^^^^^^
+.. literalinclude:: ../../examples/Sensors/WeDo_tilt.py
    
