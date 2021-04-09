@@ -8,13 +8,19 @@ Thub = TechnicHub(ble)
 # connect to a technic hub: press green button on the technic hub
 Thub.connect()
 
+# Color sensor
+ColorSensor = Thub.port.A.device
+
+# Set mode to ambient light
+ColorSensor.mode(2)
+
 k = 0
 while True:
     Thub.led(k%11)
     
-    yaw, pitch, roll = Thub.motion.yaw_pitch_roll()
+    ambient, = ColorSensor.get()
     
-    print('Roll angle: ', roll)
+    print('Ambient light: ', ambient)
 
     k+=1
     sleep_ms(1000)

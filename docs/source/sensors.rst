@@ -12,6 +12,18 @@ Color Sensor  |color_sensor|
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
+
+Examples
+--------
+
+Measure ambient light
+^^^^^^^^^^^^^^^^^^^^^
+.. literalinclude:: ../../examples/Sensors/Color_Ambient.py
+
+Control LEDs
+^^^^^^^^^^^^
+.. literalinclude:: ../../examples/Sensors/Color_LEDs.py
+   
 Ultrasonic Sensor |ultrasonic_sensor|
 =====================================
 

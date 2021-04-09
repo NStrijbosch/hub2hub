@@ -8,13 +8,18 @@ Thub = TechnicHub(ble)
 # connect to a technic hub: press green button on the technic hub
 Thub.connect()
 
+# Color sensor
+ColorSensor = Thub.port.A.device
+
 k = 0
 while True:
     Thub.led(k%11)
     
-    yaw, pitch, roll = Thub.motion.yaw_pitch_roll()
+    Led1 = 9 if k%3 == 0 else 0
+    Led2 = 9 if k%3 == 1 else 0
+    Led3 = 9 if k%3 == 2 else 0
     
-    print('Roll angle: ', roll)
+    ColorSensor.mode(3,[Led1, Led2, Led3])
 
     k+=1
     sleep_ms(1000)

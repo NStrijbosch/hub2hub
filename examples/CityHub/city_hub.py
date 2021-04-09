@@ -5,7 +5,7 @@ from time import sleep_ms
 ble = ble_handler()
 Chub = CityHub(ble)
 
-# connect to a city hub: press green button on the hub
+# connect to a city hub: press green button on the city hub
 Chub.connect()
 
 k = 0

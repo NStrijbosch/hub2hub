@@ -3,8 +3,9 @@ The hub2PU's test documentation!
 ===========================
 
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 0
 	:caption: PoweredUP devices
+	:hidden:
 	
 	hubs
 	sensors
@@ -13,6 +14,7 @@ The hub2PU's test documentation!
 .. toctree::
 	:maxdepth: 1
 	:caption:  huh2hub modules
+	:hidden:
 	
 	puhub
 	led
