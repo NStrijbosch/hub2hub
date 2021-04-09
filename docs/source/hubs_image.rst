@@ -10,7 +10,7 @@
 	:height: 40
 	:alt: Control+
 	
-.. |remote_large| image:: remote.png
+.. |remote_large| image:: ../images/remote.png
 	:height: 250
 	:alt: Control+
 	
