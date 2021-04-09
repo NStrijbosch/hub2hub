@@ -8,19 +8,19 @@ Thub = TechnicHub(ble)
 # connect to a technic hub: press green button on the technic hub
 Thub.connect()
 
-# Ultrasonic sensor connected to port A
-USSensor = Thub.port.A.device
+# Force sensor connected to port A
+ForceSensor = Thub.port.A.device
 
-# Set mode to distance long
-USSensor.mode(0)
+# Set mode to raw force
+Force.mode(4)
 
 k = 0
 while True:
     Thub.led(k%11)
     
-    distance, = USSensor.get()
+    raw_force, = ForceSensor.get()
     
-    print('distance: ', distance)
+    print('Raw force: ', raw_force)
 
     k+=1
     sleep_ms(1000)

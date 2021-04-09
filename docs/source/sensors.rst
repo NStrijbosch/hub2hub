@@ -31,7 +31,10 @@ Ultrasonic Sensor |ultrasonic_sensor|
    :file: tables/ultrasonic_sensor.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
-   
+
+Examples
+--------   
+
 Measure distance
 ^^^^^^^^^^^^^^^^^^^^^
 .. literalinclude:: ../../examples/Sensors/US_distance.py
@@ -47,6 +50,13 @@ Force Sensor |force_sensor|
    :file: tables/force_sensor.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
+   
+Examples
+--------   
+
+Measure RAW force
+^^^^^^^^^^^^^^^^^^^^^
+.. literalinclude:: ../../examples/Sensors/Force_raw.py
    
 Color/Distance Sensor |Boost_sensor| 
 ====================================
