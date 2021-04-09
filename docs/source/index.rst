@@ -9,3 +9,9 @@ The hub2PU's test documentation!
 	hubs
 	sensors
 	motors
+	
+.. toctree::
+	:maxdepth: 1
+	:caption:  huh2hub modules
+	
+	puhub
