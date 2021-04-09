@@ -8,11 +8,11 @@
 	
 .. |remote| image:: /images/remote.png
 	:height: 40
-	:alt: Control+
+	:alt: Remote
 	
 .. |remote_large| image:: /images/remote.png
 	:height: 250
-	:alt: Control+
+	:alt: Remote
 	
 .. |boost| image:: boost.png
 	:height: 40
