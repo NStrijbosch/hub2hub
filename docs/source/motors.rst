@@ -25,3 +25,9 @@ The modes of each of the servo motors are given below.
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
+Example
+-------
+   
+Run at constant speed
+^^^^^^^^^^^^^^^^^^^^^^^^^
+.. literalinclude:: ../../examples/Motor/Motor_run_at_speed.py
