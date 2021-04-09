@@ -8,18 +8,19 @@ Thub = TechnicHub(ble)
 # connect to a technic hub: press green button on the technic hub
 Thub.connect()
 
-# Color sensor connected to port A
-ColorSensor = Thub.port.A.device
+# Ultrasonic sensor connected to port A
+USSenosr = Thub.port.A.device
+
+# Set mode to distance long
+USSensor.mode(0)
 
 k = 0
 while True:
     Thub.led(k%11)
     
-    Led1 = 9 if k%3 == 0 else 0
-    Led2 = 9 if k%3 == 1 else 0
-    Led3 = 9 if k%3 == 2 else 0
+    distance, = USSensor.get()
     
-    ColorSensor.mode(3,[Led1, Led2, Led3])
+    print('distance: ', distance)
 
     k+=1
     sleep_ms(1000)

@@ -32,6 +32,14 @@ Ultrasonic Sensor |ultrasonic_sensor|
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
+Measure distance
+^^^^^^^^^^^^^^^^^^^^^
+.. literalinclude:: ../../examples/Sensors/US_distance.py
+
+Control LEDs
+^^^^^^^^^^^^
+.. literalinclude:: ../../examples/Sensors/US_LEDs.py
+   
 Force Sensor |force_sensor|
 ===========================
 
