@@ -76,12 +76,17 @@ Measure distance
 WeDo Distance Sensor |WeDo_distance|
 ====================================
 
-
-
 .. csv-table:: 
    :file: tables/WeDo_distance.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
+   
+Examples
+--------   
+
+Measure distance
+^^^^^^^^^^^^^^^^^^^^^
+.. literalinclude:: ../../examples/Sensors/WeDo_distance_count.py
    
 WeDo Tilt Sensor  |WeDo_tilt|
 =================================
