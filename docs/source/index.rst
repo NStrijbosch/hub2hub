@@ -16,5 +16,7 @@ The hub2PU's test documentation!
 	
 	puhub
 	led
+	button
 	motion
 	device
+	motor

@@ -21,11 +21,7 @@
 .. |city| image:: /images/city_hub.png
 	:height: 40
 	:alt: City hub
-	
-.. |remote| image:: /images/remote.png
-	:height: 40
-	:alt: Remote
-	
+
 .. |WeDo_distance| image:: /images/WeDo_distance.png
 	:height: 60
 	:alt: WeDo distance sensor
