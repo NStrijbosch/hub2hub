@@ -1,0 +1,9 @@
+﻿Mode,Name,Values,Unit,Datasets
+0,Color,0-10,Index,1
+1,Reflected light,0-100,Percentage,1
+2,Ambient light,0-100,Percentage,1
+3,Control LEDs,0-100,Percentage,3
+4,Raw reflected light,0-1024,RAW,2
+5,RGB I,0-1024,RAW,4
+6,HSV,0-360,RAW,3
+7,SHSV,0-360,RAW,4

@@ -1,0 +1,7 @@
+﻿Mode,Name,Value,Unit,Datasets
+0,Force,0-10,N,1
+1,Touch,0-1,ST,1
+2,Tap,0-3,TEV,1
+3,Peak force,0-10,N,1
+4,Force Raw,0-1023,RAW,1
+5,Peak force Raw,0-1023,RAW,1
