@@ -1,12 +1,12 @@
-.. |technic_hub| image:: technic_hub.png
+.. |technic_hub| image:: /images/technic_hub.png
 	:height: 40
-	:alt: Control+
+	:alt: Technic hub
 	
-.. |technic_hub_large| image:: technic_hub.png
+.. |technic_hub_large| image:: /images/technic_hub.png
 	:height: 250
-	:alt: Remote
+	:alt: Technic hub 
 	
-.. |remote| image:: ../images/remote.png
+.. |remote| image:: /images/remote.png
 	:height: 40
 	:alt: Control+
 	
