@@ -77,3 +77,7 @@
 .. |RI_angular_L| image:: /images/inventor_angular_L.png
 	:height: 100
 	:alt: Robot inventor angular L
+	
+.. |technic_angular_XL| image:: /images/technic_angular_XL.png
+	:height: 100
+	:alt: Technic angular XL motor
