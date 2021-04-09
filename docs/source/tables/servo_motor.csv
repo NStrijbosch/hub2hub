@@ -1,0 +1,6 @@
+﻿Mode,Name,Value,Unit,Datasets
+0,Power,0-100,Percentage,1
+1,Speed,0-100,Percentage,1
+2,Relative Position,.. - ..,Degrees,1
+3,Absolute Position,-180 - 179,Degrees,1
+4,Load,0-100,Percentage,1
