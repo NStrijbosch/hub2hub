@@ -759,16 +759,16 @@ class Motor:
     def busy(type):
         pass        
          
-class PUhub:
+class PUPhub:
     """ General LEGO PoweredUP hub class
     
     The methods included in this class are identical for each PoweredUP hub
     
     Replace `PUhub` with
     
-    * `TechnicHub` for |technic_hub|
-    * `CityHub` for |city_hub|
-    * `Remote` for |remote|
+    * ```TechnicHub``` for |technic_hub|
+    * ```CityHub``` for |city_hub|
+    * ```Remote``` for |remote|
     
     """
     
@@ -853,7 +853,7 @@ class PUhub:
         return message  
 
         
-class TechnicHub(PUhub):
+class TechnicHub(PUPhub):
     
     def __init__(self, handler):
         super().__init__(handler)
@@ -871,7 +871,7 @@ class TechnicHub(PUhub):
         self.motion = Motion(self,0x61, 0x62, 0x63)
         self.port = Port(self,{"A":0x00, "B":0x01, "C":0x02, "D":0x03})
         
-class CityHub(PUhub):
+class CityHub(PUPhub):
     
     def __init__(self, handler):
         super().__init__(handler)
@@ -888,7 +888,7 @@ class CityHub(PUhub):
         self.led = Led(self,0x32)
         self.port = Port(self,{"A":0x00, "B":0x01})
         
-class Remote(PUhub):
+class Remote(PUPhub):
     
     def __init__(self, handler):
         super().__init__(handler)

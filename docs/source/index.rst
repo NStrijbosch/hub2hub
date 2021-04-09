@@ -16,7 +16,7 @@ The hub2PU's test documentation!
 	:caption:  huh2hub modules
 	:hidden:
 	
-	puhub
+	puphub
 	led
 	button
 	motion
