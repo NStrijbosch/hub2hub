@@ -871,6 +871,23 @@ class TechnicHub(PUhub):
         self.motion = Motion(self,0x61, 0x62, 0x63)
         self.port = Port(self,{"A":0x00, "B":0x01, "C":0x02, "D":0x03})
         
+class CityHub(PUhub):
+    
+    def __init__(self, handler):
+        super().__init__(handler)
+        self.debug = False
+        
+        # Technic Hub specifics
+        self.__HUB_ID = 0x41
+        self.__notify_handler = 0x0F
+        
+        # Hub specifics
+        self.__address = None
+        
+        # Devices
+        self.led = Led(self,0x32)
+        self.port = Port(self,{"A":0x00, "B":0x01})
+        
 class Remote(PUhub):
     
     def __init__(self, handler):

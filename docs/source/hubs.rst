@@ -62,6 +62,11 @@ City Hub
            
       Motor
 	  
+Example	
+-------
+
+.. literalinclude:: ../../examples/CityHub/city_hub.py
+	  
 Remote
 ===========
 
