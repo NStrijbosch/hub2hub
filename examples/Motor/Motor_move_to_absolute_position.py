@@ -11,11 +11,10 @@ Thub.connect()
 # Servo motor connected to port A
 Motor = Thub.port.A.motor
 
-# Start at power
-Motor.pwm(50)
+# move to 180 degrees and hold
+Motor.run_to_position(180,stop_action = 2)
 
-# Wait 1 second
 sleep_ms(1000)
 
-# Set power to 0
-Motor.pwm(0)
+# move to 0 and float
+Motor.run_to_position(0, stop_action = 0)

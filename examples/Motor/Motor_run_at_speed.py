@@ -11,11 +11,11 @@ Thub.connect()
 # Servo motor connected to port A
 Motor = Thub.port.A.motor
 
-# Start at power
-Motor.pwm(50)
+# Set speed to 50
+Motor.run_at_speed(50)
 
 # Wait 1 second
 sleep_ms(1000)
 
-# Set power to 0
-Motor.pwm(0)
+# Set speed to 0
+Motor.run_at_speed(0)
