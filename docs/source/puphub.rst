@@ -4,5 +4,5 @@
 PUPhub
 ######
 
-.. autoclass:: hub2hub::PUhub
+.. autoclass:: hub2hub::PUPhub
    :members:
