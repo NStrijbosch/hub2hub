@@ -1,7 +1,7 @@
 from hub2hub import CityHub, ble_handler
 from time import sleep_ms
 
-# Initialize ble handler and a remote
+# Initialize ble handler and a city hub
 ble = ble_handler()
 Chub = CityHub(ble)
 
@@ -10,7 +10,7 @@ Chub.connect()
 
 k = 0
 while True:
-    Remote.led(k%11)
+    Chub.led(k%11)
 
     k+=1
     sleep_ms(1000)

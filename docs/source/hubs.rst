@@ -37,6 +37,11 @@ Technic Hub
            
       Motor
 	  
+Example	
+-------
+
+.. literalinclude:: ../../examples/TechnicHub/technic_hub.py
+	  
 City Hub
 ===========
 
