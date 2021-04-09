@@ -96,7 +96,10 @@ WeDo Tilt Sensor  |WeDo_tilt|
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
-Measure count
+Examples
+--------   
+
+Measure tilt angles
 ^^^^^^^^^^^^^^^^^^^^^
 .. literalinclude:: ../../examples/Sensors/WeDo_tilt.py
    
