@@ -66,6 +66,13 @@ Color/Distance Sensor |Boost_sensor|
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
+Examples
+--------   
+
+Measure distance
+^^^^^^^^^^^^^^^^^^^^^
+.. literalinclude:: ../../examples/Sensors/Boost_sensor_distance.py
+   
 WeDo Distance Sensor |WeDo_distance|
 ====================================
 
