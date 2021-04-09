@@ -7,13 +7,13 @@ Device
 .. autoclass:: hub2hub::Device()
 	:members:	
 	
-Examples	
-########
+Examples
+--------
 
-Measure in different modes
-**************************
-.. literalinclude:: ../../examples/Device/set_mode.py
+Measure ambient light
+^^^^^^^^^^^^^^^^^^^^^
+.. literalinclude:: ../../examples/Sensors/Color_Ambient.py
 
-Turn on LEDs
-************
-.. literalinclude:: ../../examples/Device/LEDs.py
+Control LEDs
+^^^^^^^^^^^^
+.. literalinclude:: ../../examples/Sensors/Color_LEDs.py
