@@ -764,11 +764,11 @@ class PUPhub:
     
     The methods included in this class are identical for each PoweredUP hub
     
-    Replace `PUhub` with
+    Replace ``PUhub`` with
     
-    * ```TechnicHub``` for |technic_hub|
-    * ```CityHub``` for |city_hub|
-    * ```Remote``` for |remote|
+    * ``TechnicHub`` for |technic_hub|
+    * ``CityHub`` for |city_hub|
+    * ``Remote`` for |remote|
     
     """
     
