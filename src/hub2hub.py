@@ -539,7 +539,7 @@ class Port():
 class Device:
     """ Class to control PoweredUp devices connected to a physical port
 
-    Supported on: |technic_hub| |city| |boost|
+    Supported on: |technic_hub| |city_hub| |boost|
     """
     
     def __init__(self,hub,port):
@@ -615,7 +615,7 @@ class Device:
 class Motor:
     """ Class to control PoweredUp motors
     
-    Supported on: |technic_hub| |city| |boost|
+    Supported on: |technic_hub| |city_hub| |boost|
     """
     
     def __init__(self, hub, port, device):
@@ -760,7 +760,17 @@ class Motor:
         pass        
          
 class PUhub:
-    """ Class to handle general LEGO PoweredUP hub """
+    """ General LEGO PoweredUP hub class
+    
+    The methods included in this class are identical for each PoweredUP hub
+    
+    Replace `PUhub` with
+    
+    * `TechnicHub` for |technic_hub|
+    * `CityHub` for |city_hub|
+    * `Remote` for |remote|
+    
+    """
     
     def __init__(self,handler):
         """ Create a instance of a general LEGO PoweredUP hub """ 

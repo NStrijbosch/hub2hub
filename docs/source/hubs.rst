@@ -37,6 +37,31 @@ Technic Hub
            
       Motor
 	  
+City Hub
+===========
+
+|city_hub_large|
+
+.. class:: CityHub(bt_handler)
+ 
+   Class to control a Technic Hub. 
+   
+   :param bt_handler: The bluetooth handler. 
+	  
+   .. attribute:: led
+           
+      Led
+           	  
+   .. attribute:: port.A.device
+   .. attribute:: port.B.device
+           
+      Device
+	  
+   .. attribute:: port.A.motor
+   .. attribute:: port.B.motor
+           
+      Motor
+	  
 Remote
 ===========
 

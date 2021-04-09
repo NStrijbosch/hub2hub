@@ -18,8 +18,12 @@
 	:height: 40
 	:alt: Boost
 	
-.. |city| image:: /images/city_hub.png
+.. |city_hub| image:: /images/city_hub.png
 	:height: 40
+	:alt: City hub
+	
+.. |city_hub_large| image:: /images/city_hub.png
+	:height: 250
 	:alt: City hub
 
 .. |WeDo_distance| image:: /images/WeDo_distance.png
