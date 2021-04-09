@@ -85,3 +85,8 @@ Remote
    .. attribute:: right.min
            
       Button
+	  
+Example	
+-------
+
+.. literalinclude:: ../../examples/Remote/remote.py
