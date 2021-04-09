@@ -447,7 +447,7 @@ class RemoteButton:
 class Motion:
     """ Class to handle motion sensor in PoweredUP hub
 
-    Supported on: |technic_hub| |boost|
+    Supported on: |technic_hub|
     """
 
     def __init__(self, hub, port_acc = None, port_gyro = None, port_tilt = None):
@@ -539,7 +539,7 @@ class Port():
 class Device:
     """ Class to control PoweredUp devices connected to a physical port
 
-    Supported on: |technic_hub| |city_hub| |boost|
+    Supported on: |technic_hub| |city_hub| 
     """
     
     def __init__(self,hub,port):
@@ -615,7 +615,7 @@ class Device:
 class Motor:
     """ Class to control PoweredUp motors
     
-    Supported on: |technic_hub| |city_hub| |boost|
+    Supported on: |technic_hub| |city_hub|
     """
     
     def __init__(self, hub, port, device):
@@ -628,6 +628,11 @@ class Motor:
 
         :param mode: new mode
         :type mode: byte
+        
+        Example	
+        -------
+
+        .. literalinclude:: ../../examples/CityHub/city_hub.py
         """
         self.__device.mode(mode)
     
