@@ -1,6 +1,12 @@
 
-The hub2PU's test documentation!
+The hub2hub's documentation!
 ===========================
+
+.. toctree::
+	:maxdepth: 1
+	:caption: Getting started
+	
+hklkj
 
 .. toctree::
 	:maxdepth: 0
@@ -13,7 +19,7 @@ The hub2PU's test documentation!
 	
 .. toctree::
 	:maxdepth: 1
-	:caption:  huh2hub modules
+	:caption:  hub2hub modules
 	:hidden:
 	
 	puphub
