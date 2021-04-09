@@ -24,7 +24,7 @@ Force Sensor |force_sensor|
 ===========================
 
 .. csv-table:: 
-   :file: /tables/force_sensor.csv
+   :file: tables/force_sensor.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
@@ -32,7 +32,7 @@ Color/Distance Sensor |Boost_sensor|
 ====================================
 
 .. csv-table:: 
-   :file: /images/boost_sensor.csv
+   :file: images/boost_sensor.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
