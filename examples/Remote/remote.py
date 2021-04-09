@@ -1,4 +1,4 @@
-from hub2PU Remote, ble_handler
+from hub2hub import Remote, ble_handler
 from time import sleep_ms
 
 ble = ble_handler()
