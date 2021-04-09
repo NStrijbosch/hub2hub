@@ -772,9 +772,13 @@ class PUPhub:
     
     """
     
-    def __init__(self,handler):
-        """ Create a instance of a general LEGO PoweredUP hub """ 
-        self.__handler = handler
+    def __init__(self,bt_handler):
+        """ Create a instance of a general LEGO PoweredUP hub
+
+        :param bt_handler: the bluetooth handler
+        :type bt_handler: ble_handler
+        """ 
+        self.__handler = bt_handler
         self.__on_connect_messages = []
         self.__update_measurement={}
         self.__update_mode_info = {}
