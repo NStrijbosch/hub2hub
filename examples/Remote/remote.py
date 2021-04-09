@@ -1,22 +1,19 @@
-import hub2PU
+from hub2PU Remote, ble_handler
 from time import sleep_ms
 
-ble = hub2PU.ble_handler()
-Remote = hub2PU.Remote(ble)
+ble = ble_handler()
+Remote = Remote(ble)
 Remote.connect()
 
+RemoteLed = Remote.led
 RemoteLeft = Remote.left
 RemoteRight = Remote.right
 
 k = 0
 while True:
-    Remote.led(k%11)
+    RemoteLed(k%11)
     print('Left plus pressed: ', RemoteLeft.plus.is_pressed())
-    print('Left red pressed: ', RemoteLeft.red.was_pressed())
-    print('Left min number of presses: ', RemoteLeft.min.presses())
-    print('Right plus pressed: ', RemoteRight.plus.is_pressed())
-    print('Right red pressed: ', RemoteRight.red.was_pressed())
-    print('Right min number of presses: ', RemoteRight.min.presses())
+    print('Right plus was pressed: ', RemoteRight.plus.was_pressed())
 
     k+=1
     sleep_ms(1000)
