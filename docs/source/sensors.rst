@@ -32,7 +32,7 @@ Color/Distance Sensor |Boost_sensor|
 ====================================
 
 .. csv-table:: 
-   :file: /tables/boost_sensor.csv
+   :file: /images/boost_sensor.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
