@@ -16,7 +16,7 @@ Servomotors
 
 All PoweredUP servo motors currently supported are:
 
-|technic_large_motor| |technic_XL_motor| |technic_angular_XL |spike_angular_XL| |spike_angular_L| |RI_angular_L| |boost_motor|
+|technic_large_motor| |technic_XL_motor| |technic_angular_XL| |spike_angular_XL| |spike_angular_L| |RI_angular_L| |boost_motor|
 
 The modes of each of the servo motors are given below. 
 
