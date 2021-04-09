@@ -8,7 +8,7 @@ Color Sensor  |color_sensor|
 ============================
 
 .. csv-table:: 
-   :file: /tables/color_sensor.csv
+   :file: tables/color_sensor.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
@@ -16,7 +16,7 @@ Ultrasonic Sensor |ultrasonic_sensor|
 =====================================
 
 .. csv-table:: 
-   :file: /tables/ultrasonic_sensor.csv
+   :file: tables/ultrasonic_sensor.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
@@ -32,7 +32,7 @@ Color/Distance Sensor |Boost_sensor|
 ====================================
 
 .. csv-table:: 
-   :file: images/boost_sensor.csv
+   :file: tables/boost_sensor.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
@@ -42,7 +42,7 @@ WeDo Distance Sensor |WeDo_distance|
 
 
 .. csv-table:: 
-   :file: /tables/WeDo_distance.csv
+   :file: tables/WeDo_distance.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
@@ -50,7 +50,7 @@ WeDo Tilt Sensor  |WeDo_tilt|
 =================================
 
 .. csv-table:: 
-   :file: /tables/WeDo_gyro.csv
+   :file: tables/WeDo_gyro.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    

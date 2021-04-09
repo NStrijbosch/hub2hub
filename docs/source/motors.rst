@@ -19,7 +19,7 @@ All PoweredUP servo motors currently supported are:
 The modes of each of the servo motors are given below. 
 
 .. csv-table:: 
-   :file: ../tables/servo_motor.csv
+   :file: tables/servo_motor.csv
    :widths: 30, 70, 30, 30, 30
    :header-rows: 1
    
