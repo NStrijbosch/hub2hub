@@ -27,12 +27,14 @@ Step 3
 Set the SPIKE Prime execution mode in download mode, and select an unused project slot.
 
 .. image:: /images/app_download_mode.png
-	:height: 100
+	:height: 200
 	:alt: app download mode
 
 
 Step 4
 ------
+
+Run the project by pressing the play button and wait until the hub is powered down. This process can take up to a minute. If you use a USB cable to connect the hub, the hub will probably restart automatically.
 
 .. image:: /images/app_run.png
 	:height: 100
