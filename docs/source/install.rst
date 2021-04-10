@@ -26,7 +26,7 @@ Step 3
 
 Set the SPIKE Prime execution mode in download mode, and select an unused project slot.
 
-image:: /images/app_download_mode.png
+.. image:: /images/app_download_mode.png
 	:height: 100
 	:alt: app download mode
 
@@ -34,7 +34,7 @@ image:: /images/app_download_mode.png
 Step 4
 ------
 
-image:: /images/app_run.png
+.. image:: /images/app_run.png
 	:height: 100
 	:alt: app run
 	
