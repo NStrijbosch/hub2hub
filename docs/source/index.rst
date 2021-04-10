@@ -36,7 +36,7 @@ The main goal of the ``hub2hub`` library is to simplify the python code required
 This library is still actively developed, at the moment two different versions are available that cannot be installed at the same time on a single hub. 
 
 * The latest version: 0.1.0 supports communication between a LEGO SPIKE Prime or LEGO MINDSTORMS Robot Inventor hub with a PoweredUP hub. This version is documented on this page. 
-* The previous version: 0.0.3/0.0.4 supports communication between LEGO SPIKE Prime and LEGO MINDSTORMS Robot Inventor hubs. This version is document `here <https://hubmodule.readthedocs.io/en/latest/hub2hub>`
+* The previous version: 0.0.3/0.0.4 supports communication between LEGO SPIKE Prime and LEGO MINDSTORMS Robot Inventor hubs. This version is document `here <https://hubmodule.readthedocs.io/en/latest/hub2hub>`_
 
 In a future release functionalities of both versions will be combined. 
 
