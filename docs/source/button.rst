@@ -8,5 +8,4 @@ Button
 
 Example	
 -------
-
 .. literalinclude:: ../../examples/Remote/remote.py

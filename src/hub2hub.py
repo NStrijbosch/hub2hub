@@ -1,18 +1,29 @@
-if __name__ == '__main__':
+if __name__ == "__main__":
     from micropython import const, alloc_emergency_exception_buf, schedule
     from time import sleep_ms
     import ubluetooth
     import ubinascii
     import struct
+    from hub import display, Image
+    
+_CONNECT_IMG_1 = Image("00000:09000:09000:09000:00000")
+_CONNECT_IMG_2 = Image("00000:00900:00900:00900:00000")
+_CONNECT_IMG_3 = Image("00000:00090:00090:00090:00000")
+
+_COMPLETE_IMG = Image("00000:05550:05950:05550:00000")
+_CONNECT_CHILDREN_SEARCH_IMG = Image("55000:50000:50000:50000:55000")
+_CONNECT_CHILDREN_FOUND_IMG = Image("99000:90000:90000:90000:99000")
+_CONNECT_ANIMATION_C_S = [_CONNECT_IMG_1+_CONNECT_CHILDREN_SEARCH_IMG,
+                        _CONNECT_IMG_2+_CONNECT_CHILDREN_SEARCH_IMG,
+                        _CONNECT_IMG_3+_CONNECT_CHILDREN_SEARCH_IMG]
    
 class ble_handler:
-    """
-    Class to deal with LEGO(R) PowerUp(TM) over BLE
+    """  Class to handle BLE devices
     """
 
     def __init__(self):
         """
-        Create instance of _PoweredUPHandler
+        Create instance of ble_handler
         """
         # constants
         self.__IRQ_SCAN_RESULT = const(1 << 4)
@@ -43,8 +54,7 @@ class ble_handler:
         self.__disconnected_callback = None
 
     def __reset(self):
-        """
-        reset all necessary variables
+        """ reset all necessary variables
         """
         # cached data
         self.__addr = None
@@ -64,8 +74,7 @@ class ble_handler:
         self.__disconnected_callback = None
 
     def __log(self, *args):
-        """
-        log function if debug flag is set
+        """ log function if debug flag is set
 
         :param args: arguments to log
         :returns: nothing
@@ -75,14 +84,14 @@ class ble_handler:
         print(args)
 
     def scan_start(self, timeout, callback):
-        """
-        start scanning for devices
+        """ start scanning for devices
 
         :param timeout: timeout in ms
         :param callback: callback function, contains scan data
         :returns: nothing
         """
         self.__log("start scanning...")
+        self.__update_animation()
         self.__scan_callback = callback
         self.__ble.gap_scan(timeout, 30000, 30000)
 
@@ -207,6 +216,7 @@ class ble_handler:
             self.__disconnected_callback()
             if conn_handle == self.__conn_handle:
                 self.__reset()
+                self.__update_animation()
 
         elif event == self.__IRQ_GATTC_SERVICE_RESULT:
             conn_handle, start_handle, end_handle, uuid = data
@@ -219,6 +229,7 @@ class ble_handler:
             if conn_handle == self.__conn_handle and uuid == self.__LEGO_SERVICE_CHAR:
                 self.__value_handle = value_handle
                 schedule(self.__connected_callback,1)
+                schedule(self.__update_animation,1)
 
         elif event == self.__IRQ_GATTC_READ_RESULT:
             conn_handle, value_handle, char_data = data
@@ -229,6 +240,12 @@ class ble_handler:
             conn_handle, value_handle, notify_data = data
             if self.__notify_callback:
                 schedule(self.__notify_callback,notify_data)
+                
+    def __update_animation(self,*arg):
+        if not self.__is_connected():
+            display.show(_CONNECT_ANIMATION_C_S, delay=100, wait=False, loop=True)
+        else:
+            display.show(_COMPLETE_IMG+_CONNECT_CHILDREN_FOUND_IMG)
 
 
 class _Decoder:
@@ -909,3 +926,6 @@ class Remote(PUPhub):
         self.led = Led(self, 0x34)
         self.left = RemoteButton(self, 0x00)
         self.right = RemoteButton(self, 0x01)
+        
+def version():
+    return "0.1.0"
