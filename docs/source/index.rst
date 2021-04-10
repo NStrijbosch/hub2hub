@@ -6,7 +6,7 @@ The hub2hub's documentation!
 	:maxdepth: 1
 	:caption: Getting started
 	
-	install
+	index
 
 .. toctree::
 	:maxdepth: 0
