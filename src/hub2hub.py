@@ -6,16 +6,16 @@ if __name__ == "__main__":
     import struct
     from hub import display, Image
 
-    _CONNECT_IMG_1 = Image("00000:09000:09000:09000:00000")
-    _CONNECT_IMG_2 = Image("00000:00900:00900:00900:00000")
-    _CONNECT_IMG_3 = Image("00000:00090:00090:00090:00000")
+_CONNECT_IMG_1 = Image("00000:09000:09000:09000:00000")
+_CONNECT_IMG_2 = Image("00000:00900:00900:00900:00000")
+_CONNECT_IMG_3 = Image("00000:00090:00090:00090:00000")
 
-    _COMPLETE_IMG = Image("00000:05550:05950:05550:00000")
-    _CONNECT_CHILDREN_SEARCH_IMG = Image("55000:50000:50000:50000:55000")
-    _CONNECT_CHILDREN_FOUND_IMG = Image("99000:90000:90000:90000:99000")
-    _CONNECT_ANIMATION_C_S = [_CONNECT_IMG_1+_CONNECT_CHILDREN_SEARCH_IMG,
-                            _CONNECT_IMG_2+_CONNECT_CHILDREN_SEARCH_IMG,
-                            _CONNECT_IMG_3+_CONNECT_CHILDREN_SEARCH_IMG]
+_COMPLETE_IMG = Image("00000:05550:05950:05550:00000")
+_CONNECT_CHILDREN_SEARCH_IMG = Image("55000:50000:50000:50000:55000")
+_CONNECT_CHILDREN_FOUND_IMG = Image("99000:90000:90000:90000:99000")
+_CONNECT_ANIMATION_C_S = [_CONNECT_IMG_1+_CONNECT_CHILDREN_SEARCH_IMG,
+                        _CONNECT_IMG_2+_CONNECT_CHILDREN_SEARCH_IMG,
+                        _CONNECT_IMG_3+_CONNECT_CHILDREN_SEARCH_IMG]
 
 class ble_handler:
     """  Class to handle BLE devices
@@ -875,6 +875,43 @@ class MotionMario:
         if self.__value[0] not in self.__observed_gestures:
             self.__observed_gestures.append(self.__value[0])
 
+class Pants:
+    """ Class to detect a LEGO Mario pants
+
+    Supported on: |mario|
+    """
+
+    def __init__(self, hub, port):
+        """ Create a instance of gesture sensor """
+        self.__hub = hub
+        self.__port = port
+        
+        self.__value = [0,]
+        
+        SUBSCRIBE_PANTS = self.__hub.__create_message([0x0A, 0x00, 0x41, self.__port, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01])
+        
+        self.__hub.__add_connect_message(SUBSCRIBE_PANTS)
+        
+        self.__hub.__update_measurement[self.__port] = self.__update_pants
+
+    def get(self):
+        """ Get current pants
+
+        :return: value corresponding to a pants
+        :rtype: int
+        """
+        return self.__value[0]
+
+    
+    """
+    private functions
+    -----------------
+    """
+    def __update_pants(self,payload):
+        """ Update gestures"""
+        print(payload)
+        self.__value = struct.unpack("%sB" % 1, payload)
+
 class PUPhub:
     """ General LEGO PoweredUP hub class
     
@@ -1044,6 +1081,7 @@ class Mario(PUPhub):
         # Devices
         self.motion = MotionMario(self,0x00)
         self.barcode = Barcode(self,0x01)
+        self.pants = Pants(self,0x02)
         
 def version():
     return "0.1.0"

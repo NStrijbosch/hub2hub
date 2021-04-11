@@ -31,6 +31,7 @@ The hub2hub's documentation!
 	motor
 	barcode
 	mario_motion
+	pants
 	
 The ``hub2hub`` library is not part of the original firmware of either the Robot Inventor hub or the SPIKE Prime hub. In the official SPIKE Prime firmware, a low-level ubluetooth library is available to be able to directly communicate over Bluetooth Low Energy (BLE). The documentation of this module can be found here: `ubluetooth documentation <https://docs.micropython.org/en/latest/library/ubluetooth.html>`_
 

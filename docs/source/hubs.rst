@@ -116,6 +116,14 @@ Mario
            
       Barcode
 	  
+   .. attribute:: motion
+   
+      MotionMario
+	  
+   .. attribute:: pants
+   
+      Pants
+	  
 Example	
 -------
 
