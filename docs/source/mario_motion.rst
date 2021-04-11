@@ -1,10 +1,10 @@
 .. include:: hubs_image.rst
 
-#######
-Barcode
-#######
+############
+Motion Mario
+############
 
-.. autoclass:: hub2hub::MarioMotion()
+.. autoclass:: hub2hub::MotionMario()
 
 Example	
 -------
