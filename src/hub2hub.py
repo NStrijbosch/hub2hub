@@ -1,21 +1,20 @@
-if __name__ == "__main__":
-    from micropython import const, alloc_emergency_exception_buf, schedule
-    from time import sleep_ms
-    import ubluetooth
-    import ubinascii
-    import struct
-    from hub import display, Image
+from micropython import const, alloc_emergency_exception_buf, schedule
+from time import sleep_ms
+import ubluetooth
+import ubinascii
+import struct
+from hub import display, Image
 
-    _CONNECT_IMG_1 = Image("00000:09000:09000:09000:00000")
-    _CONNECT_IMG_2 = Image("00000:00900:00900:00900:00000")
-    _CONNECT_IMG_3 = Image("00000:00090:00090:00090:00000")
+_CONNECT_IMG_1 = Image("00000:09000:09000:09000:00000")
+_CONNECT_IMG_2 = Image("00000:00900:00900:00900:00000")
+_CONNECT_IMG_3 = Image("00000:00090:00090:00090:00000")
 
-    _COMPLETE_IMG = Image("00000:05550:05950:05550:00000")
-    _CONNECT_CHILDREN_SEARCH_IMG = Image("55000:50000:50000:50000:55000")
-    _CONNECT_CHILDREN_FOUND_IMG = Image("99000:90000:90000:90000:99000")
-    _CONNECT_ANIMATION_C_S = [_CONNECT_IMG_1+_CONNECT_CHILDREN_SEARCH_IMG,
-                            _CONNECT_IMG_2+_CONNECT_CHILDREN_SEARCH_IMG,
-                            _CONNECT_IMG_3+_CONNECT_CHILDREN_SEARCH_IMG]
+_COMPLETE_IMG = Image("00000:05550:05950:05550:00000")
+_CONNECT_CHILDREN_SEARCH_IMG = Image("55000:50000:50000:50000:55000")
+_CONNECT_CHILDREN_FOUND_IMG = Image("99000:90000:90000:90000:99000")
+_CONNECT_ANIMATION_C_S = [_CONNECT_IMG_1+_CONNECT_CHILDREN_SEARCH_IMG,
+                        _CONNECT_IMG_2+_CONNECT_CHILDREN_SEARCH_IMG,
+                        _CONNECT_IMG_3+_CONNECT_CHILDREN_SEARCH_IMG]
 
 class ble_handler:
     """  Class to handle BLE devices
