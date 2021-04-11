@@ -214,9 +214,11 @@ class ble_handler:
         elif event == self.__IRQ_PERIPHERAL_DISCONNECT:
             conn_handle, _, _ = data
             #self.__disconnected_callback()
+            print('disconnect')
             if conn_handle == self.__conn_handle:
                 self.__reset()
                 self.__update_animation()
+                self.scan_start(30000,None)
 
         elif event == self.__IRQ_GATTC_SERVICE_RESULT:
             conn_handle, start_handle, end_handle, uuid = data
@@ -822,6 +824,57 @@ class Barcode:
         else:
             self.__color = None
          
+class MotionMario:
+    """ Class to handle motion sensor in LEGO Mario
+
+    Supported on: |mario|
+    """
+
+    def __init__(self, hub, port):
+        """ Create a instance of gesture sensor """
+        self.__hub = hub
+        self.__port = port
+        
+        self.__value = [0,]
+        self.__observed_gestures = []
+        
+        SUBSCRIBE_GESTURE = self.__hub.__create_message([0x0A, 0x00, 0x41, self.__port, 0x01, 0x01, 0x00, 0x00, 0x00, 0x01])
+        
+        self.__hub.__add_connect_message(SUBSCRIBE_GESTURE)
+        
+        self.__hub.__update_measurement[self.__port] = self.__update_gesture
+
+    def gesture(self):
+        """ Return active gesture
+
+        :return: gesture
+        :rtype: int
+        """
+        return self.__value[0]
+    
+    def was_gesture(self, gesture):
+        """ Return if gesture was active since last call
+
+        :param gesture: gesture to check
+        :type gesture: int    
+        :return: True if gesture was active since last call, otherwise False
+        :rtype: boolean
+        """
+        
+        check = gesture in self.__observed_gestures
+        self.__observed_gestures = []
+        return check
+    
+    """
+    private functions
+    -----------------
+    """
+    def __update_gesture(self,payload):
+        """ Update gestures"""
+        self.__value = struct.unpack("%sH" % 1, payload[:2])
+        if self.__value[0] not in self.__observed_gestures:
+            self.__observed_gestures.append(self.__value[0])
+
 class PUPhub:
     """ General LEGO PoweredUP hub class
     
@@ -832,6 +885,7 @@ class PUPhub:
     * ``TechnicHub`` for |technic_hub|
     * ``CityHub`` for |city_hub|
     * ``Remote`` for |remote|
+    * ``Mario`` for |mario|
     
     """
     
@@ -862,14 +916,15 @@ class PUPhub:
         while not self.is_connected():
             pass
         
-        notifier = self.__create_message([0x01, 0x00])
-            
-        self.__handler.write(notifier, self.__notify_handler)
-        sleep_ms(100)
         
         for message in self.__on_connect_messages:
             self.__handler.write(message)
             sleep_ms(100)
+            
+        notifier = self.__create_message([0x01, 0x00])
+            
+        self.__handler.write(notifier, self.__notify_handler)
+        sleep_ms(100)
     
     def disconnect(self):
         """ Disconnect from a PoweredUP hub """
@@ -987,6 +1042,7 @@ class Mario(PUPhub):
         self.__address = None
         
         # Devices
+        self.motion = MotionMario(self,0x00)
         self.barcode = Barcode(self,0x01)
         
 def version():
