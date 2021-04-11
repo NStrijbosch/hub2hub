@@ -213,7 +213,7 @@ class ble_handler:
         elif event == self.__IRQ_PERIPHERAL_DISCONNECT:
             conn_handle, _, _ = data
             #self.__disconnected_callback()
-            print('disconnect')
+            print("disconnected")
             if conn_handle == self.__conn_handle:
                 self.__reset()
                 self.__update_animation()
