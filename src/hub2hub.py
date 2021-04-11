@@ -5,7 +5,7 @@ if __name__ == "__main__":
     import ubinascii
     import struct
     from hub import display, Image
-    
+
     _CONNECT_IMG_1 = Image("00000:09000:09000:09000:00000")
     _CONNECT_IMG_2 = Image("00000:00900:00900:00900:00000")
     _CONNECT_IMG_3 = Image("00000:00090:00090:00090:00000")
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     _CONNECT_ANIMATION_C_S = [_CONNECT_IMG_1+_CONNECT_CHILDREN_SEARCH_IMG,
                             _CONNECT_IMG_2+_CONNECT_CHILDREN_SEARCH_IMG,
                             _CONNECT_IMG_3+_CONNECT_CHILDREN_SEARCH_IMG]
-   
+
 class ble_handler:
     """  Class to handle BLE devices
     """
@@ -213,7 +213,7 @@ class ble_handler:
 
         elif event == self.__IRQ_PERIPHERAL_DISCONNECT:
             conn_handle, _, _ = data
-            self.__disconnected_callback()
+            #self.__disconnected_callback()
             if conn_handle == self.__conn_handle:
                 self.__reset()
                 self.__update_animation()
@@ -774,7 +774,53 @@ class Motor:
         self.__hub.__handler.write(set_power)
 
     def busy(type):
-        pass        
+        pass
+    
+class Barcode:
+    """ Class to handle barcode sensor
+
+    Supported on: |mario|
+    """
+
+    def __init__(self, hub, port):
+        """ Create a instance of barcode sensor """
+        self.__hub = hub
+        self.__port = port
+        
+        self.__color = 0x0138
+        self.__barcode = 0
+        
+        SUBSCRIBE_BARCODE = self.__hub.__create_message([0x0A, 0x00, 0x41, self.__port, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01])
+        
+        self.__hub.__add_connect_message(SUBSCRIBE_BARCODE)
+        
+        self.__hub.__update_measurement[self.__port] = self.__update_barcode
+
+    def get(self):
+        """ Return current barcode and color
+
+        :return: barcode, color
+        :rtype: tuple
+        """
+        
+        return (self.__barcode, self.__color,)
+    
+    """
+    private functions
+    -----------------
+    """
+    def __update_barcode(self,payload):
+        """ Update barcode and color """
+        data = struct.unpack("%sH" % 2, payload)
+        if data[0] != 0xFFFF:
+            self.__barcode = data[0]
+        else:
+            self.__barcode = None
+            
+        if data[1] != 0xFFFF:
+            self.__color = data[1]
+        else:
+            self.__color = None
          
 class PUPhub:
     """ General LEGO PoweredUP hub class
@@ -926,6 +972,22 @@ class Remote(PUPhub):
         self.led = Led(self, 0x34)
         self.left = RemoteButton(self, 0x00)
         self.right = RemoteButton(self, 0x01)
+        
+class Mario(PUPhub):
+    
+    def __init__(self, handler):
+        super().__init__(handler)
+        self.debug = False
+        
+        # Remote specifics
+        self.__HUB_ID = 0x43
+        self.__notify_handler = 14
+        
+        # Hub specifics
+        self.__address = None
+        
+        # Devices
+        self.barcode = Barcode(self,0x01)
         
 def version():
     return "0.1.0"

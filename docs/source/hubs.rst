@@ -100,3 +100,23 @@ Example
 -------
 
 .. literalinclude:: ../../examples/Remote/remote.py
+
+Remote
+===========
+
+|mario_large|
+
+.. class:: Mario(bt_handler)
+ 
+   Class to control a LEGO Mario
+   
+   :param bt_handler: The bluetooth handler. 
+	  
+   .. attribute:: barcode
+           
+      Barcode
+	  
+Example	
+-------
+
+.. literalinclude:: ../../examples/Mario/mario.py
