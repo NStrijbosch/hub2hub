@@ -101,7 +101,7 @@ Example
 
 .. literalinclude:: ../../examples/Remote/remote.py
 
-Remote
+Mario
 ===========
 
 |mario_large|

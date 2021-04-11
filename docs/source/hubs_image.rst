@@ -31,7 +31,7 @@
 	:alt: mario
 	
 .. |mario_large| image:: https://www.lego.com/cdn/cs/set/assets/blt3dea245d00d877dc/71360_alt19.png?fit=bounds&format=png&width=1600&height=1600&dpr=1.5
-	:height: 40
+	:height: 250
 	:alt: mario
 
 .. |WeDo_distance| image:: /images/WeDo_distance.png
