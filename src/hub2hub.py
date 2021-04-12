@@ -908,7 +908,6 @@ class Pants:
     """
     def __update_pants(self,payload):
         """ Update gestures"""
-        print(payload)
         self.__value = struct.unpack("%sB" % 1, payload)
 
 class PUPhub:
