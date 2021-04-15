@@ -1,4 +1,4 @@
-if __name__ = '__main__' 
+if __name__ == '__main__' 
     from micropython import const, alloc_emergency_exception_buf, schedule
     from time import sleep_ms
     import ubluetooth
