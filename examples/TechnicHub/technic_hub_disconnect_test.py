@@ -8,16 +8,14 @@ Thub = TechnicHub(ble)
 # connect to a technic hub: press green button on the technic hub
 Thub.connect()
 
-k = 0
-while True:
-    Thub.led(k%11)
-    
-    yaw, pitch, roll = Thub.motion.yaw_pitch_roll()
-    shaken = Thub.motion.was_gesture(3)
-    
-    print('Roll angle: ', roll, 'Shaken?: ', shaken)
+Thub.led(8)
 
-    k+=1
-    sleep_ms(1000)
+sleep_ms(2000)
+
+Thub.disconnect()
+
+sleep_ms(10000)
+
+Thub.connect()
     
     
