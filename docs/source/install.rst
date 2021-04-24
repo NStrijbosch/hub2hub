@@ -19,7 +19,7 @@ If you did not update your SPIKE Prime software yet, install one of the latest v
 Step 2
 ------
 
-Download and open the project: `Instal_hub2hub_v010.llsp <https://github.com/NStrijbosch/hub2hub/blob/main/install/Install_hub2hub_v010.llsp?raw=true>`_
+Download and open the project: `Instal_hub2hub_v011.llsp <https://github.com/NStrijbosch/hub2hub/blob/main/install/Install_hub2hub_v011.llsp?raw=true>`_
 
 Step 3
 ------
