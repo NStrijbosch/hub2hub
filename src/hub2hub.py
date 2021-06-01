@@ -4,6 +4,7 @@ if __name__ == '__main__':
     import ubluetooth
     import ubinascii
     import struct
+    import hub
     from hub import display, Image
 
     _CONNECT_IMG_1 = Image("00000:09000:09000:09000:00000")
@@ -26,14 +27,25 @@ class ble_handler:
         Create instance of ble_handler
         """
         # constants
-        self.__IRQ_SCAN_RESULT = const(1 << 4)
-        self.__IRQ_SCAN_COMPLETE = const(1 << 5)
-        self.__IRQ_PERIPHERAL_CONNECT = const(1 << 6)
-        self.__IRQ_PERIPHERAL_DISCONNECT = const(1 << 7)
-        self.__IRQ_GATTC_SERVICE_RESULT = const(1 << 8)
-        self.__IRQ_GATTC_CHARACTERISTIC_RESULT = const(1 << 9)
-        self.__IRQ_GATTC_READ_RESULT = const(1 << 11)
-        self.__IRQ_GATTC_NOTIFY = const(1 << 13)
+
+        if hub.info()['product_variant'] == 1:
+            self.__IRQ_SCAN_RESULT = const(5)
+            self.__IRQ_SCAN_COMPLETE = const(6)
+            self.__IRQ_PERIPHERAL_CONNECT = const(7)
+            self.__IRQ_PERIPHERAL_DISCONNECT = const(8)
+            self.__IRQ_GATTC_SERVICE_RESULT = const(9)
+            self.__IRQ_GATTC_CHARACTERISTIC_RESULT = const(11)
+            self.__IRQ_GATTC_READ_RESULT = const(15)
+            self.__IRQ_GATTC_NOTIFY = const(18)
+        else:
+            self.__IRQ_SCAN_RESULT = const(1 << 4)
+            self.__IRQ_SCAN_COMPLETE = const(1 << 5)
+            self.__IRQ_PERIPHERAL_CONNECT = const(1 << 6)
+            self.__IRQ_PERIPHERAL_DISCONNECT = const(1 << 7)
+            self.__IRQ_GATTC_SERVICE_RESULT = const(1 << 8)
+            self.__IRQ_GATTC_CHARACTERISTIC_RESULT = const(1 << 9)
+            self.__IRQ_GATTC_READ_RESULT = const(1 << 11)
+            self.__IRQ_GATTC_NOTIFY = const(1 << 13)
 
         self.__LEGO_SERVICE_UUID = ubluetooth.UUID("00001623-1212-EFDE-1623-785FEABCD123")
         self.__LEGO_SERVICE_CHAR = ubluetooth.UUID("00001624-1212-EFDE-1623-785FEABCD123")
